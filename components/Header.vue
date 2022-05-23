@@ -22,12 +22,16 @@
             </a>
           </li>
         </ul>
-        <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
-          Sign Up
-        </button>
-        <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
-          Log In
-        </button>
+        <nuxt-link to="/sign-up">
+          <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
+            Sign Up
+          </button>
+        </nuxt-link>
+        <nuxt-link to="/log-in">
+          <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
+            Log In
+          </button>
+        </nuxt-link>
       </div>
     </div>
   </nav>

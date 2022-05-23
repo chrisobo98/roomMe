@@ -45,7 +45,24 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: 'AIzaSyC0cXk3n7_sQDiJQKDnNAqtYUJ8_lBSUN0',
+          authDomain: 'roomme-2e048.firebaseapp.com',
+          projectId: 'roomme-2e048',
+          storageBucket: 'roomme-2e048.appspot.com',
+          messagingSenderId: '926362634674',
+          appId: '1:926362634674:web:de3b6e7e174aa8e35b7cab',
+          measurementId: 'G-LGG2B0BMJH'
+        },
+        services: {
+          auth: true // Just as example. Can be any other service.
+        }
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
