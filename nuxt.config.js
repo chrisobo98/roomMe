@@ -41,6 +41,9 @@ export default {
       brands: true
     }
   },
+  router: {
+    middleware: ['auth']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -59,7 +62,12 @@ export default {
           measurementId: 'G-LGG2B0BMJH'
         },
         services: {
-          auth: true // Just as example. Can be any other service.
+          auth: {
+            persistence: 'local',
+            initialize: {
+              onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION'
+            }
+          }
         }
       }
     ]

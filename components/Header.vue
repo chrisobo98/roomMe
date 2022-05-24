@@ -22,16 +22,26 @@
             </a>
           </li>
         </ul>
-        <nuxt-link to="/sign-up">
-          <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
-            Sign Up
+        <div v-if="currentUser">
+          <p class="text-white">
+            Welcome, {{ currentUser.email }}!
+          </p>
+          <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0" @click="signOut()">
+            Sign Out
           </button>
-        </nuxt-link>
-        <nuxt-link to="/log-in">
-          <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
-            Log In
-          </button>
-        </nuxt-link>
+        </div>
+        <div v-else>
+          <nuxt-link to="/sign-up">
+            <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
+              Sign Up
+            </button>
+          </nuxt-link>
+          <nuxt-link to="/log-in">
+            <button class="rounded-full inline-flex items-center bg-green-500 hover:bg-green-600 border-0 py-2 px-6 mx-2 text-white focus:outline-none rounded mt-4 md:mt-0">
+              Log In
+            </button>
+          </nuxt-link>
+        </div>
       </div>
     </div>
   </nav>
@@ -45,9 +55,18 @@ export default {
       showMenu: false
     }
   },
+  computed: {
+    currentUser () {
+      return this.$store.state.user
+    }
+  },
   methods: {
     toggleNavbar () {
       this.showMenu = !this.showMenu
+    },
+    signOut () {
+      this.$fire.auth.signOut()
+      this.$router.push('/log-in')
     }
   }
 }

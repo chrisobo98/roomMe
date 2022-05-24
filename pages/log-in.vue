@@ -60,9 +60,7 @@ export default {
   },
   methods: {
     userLogin () {
-      this.$firebase
-        .auth()
-        .signInWithEmailAndPassword(this.user.email, this.user.password)
+      this.$fire.auth.signInWithEmailAndPassword(this.user.email, this.user.password)
         .then(() => {
           this.$router.push('/')
         })
