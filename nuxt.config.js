@@ -1,4 +1,5 @@
 export default {
+  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'roomme',
@@ -41,10 +42,6 @@ export default {
       brands: true
     }
   },
-  router: {
-    middleware: ['auth']
-  },
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios

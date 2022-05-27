@@ -1,9 +1,7 @@
 <template>
   <div>
-    <Header />
     <Landing />
     <LandingNewestApartments />
-    <Footer />
   </div>
 </template>
 

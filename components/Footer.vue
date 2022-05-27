@@ -10,7 +10,9 @@
               </h2>
               <nav class="list-none mb-10">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">About</a>
+                  <nuxt-link to="/about">
+                    <a class="text-gray-600 hover:text-gray-800">About</a>
+                  </nuxt-link>
                 </li>
                 <li>
                   <a class="text-gray-600 hover:text-gray-800">Help</a>
